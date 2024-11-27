@@ -1,0 +1,127 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #87ceeb; /* Sky Blue */
+  }
+  
+  /* Scene Wrapper */
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Train */
+  .train {
+    position: absolute;
+    bottom: 50px;
+    left: -200px;
+    display: flex;
+    animation: moveTrain 8s linear infinite;
+  }
+  
+  .engine, .carriage {
+    width: 80px;
+    height: 50px;
+    background-color: #444;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .engine:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #777;
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    border-radius: 50%;
+  }
+  
+  .engine:after,
+  .carriage:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    border-radius: 50%;
+  }
+  
+  .carriage:after {
+    left: 20px;
+  }
+  
+  /* Railway */
+  .railway {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: #8b4513;
+  }
+  
+  .track {
+    position: absolute;
+    height: 10px;
+    background: #444;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .track:nth-child(2) {
+    top: 15px;
+  }
+  
+  /* Environment */
+  .environment .tree {
+    position: absolute;
+    bottom: 30px;
+    width: 30px;
+    height: 50px;
+    background: #228b22;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    left: 10%;
+    animation: sway 3s ease-in-out infinite alternate;
+  }
+  
+  .environment .tree:nth-child(2) {
+    left: 30%;
+  }
+  
+  .environment .building {
+    position: absolute;
+    bottom: 30px;
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    background: #8b0000;
+  }
+  
+  /* Keyframes */
+  @keyframes moveTrain {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(120%);
+    }
+  }
+  
+  @keyframes sway {
+    0% {
+      transform: rotate(-2deg);
+    }
+    100% {
+      transform: rotate(2deg);
+    }
+  }
+  
